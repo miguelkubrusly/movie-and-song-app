@@ -1,17 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomMovie } from "../data";
-import { addMovie, removeMovie } from "../store";
+import { addMovie, AppDispatch, Movie, removeMovie } from "../store";
+import { Dispatch } from "react";
+
+type MovieState = { movies: Movie[] };
 
 function MoviePlaylist() {
-  const dispatch = useDispatch();
-  const moviePlaylist: string[] = useSelector(
-    (state: { movies: string[] }) => state!.movies
+  const dispatch: Dispatch<AppDispatch> = useDispatch();
+  const moviePlaylist: Movie[] = useSelector(
+    (state: MovieState) => state!.movies
   );
 
-  const handleMovieAdd = (movie: string) => {
+  const handleMovieAdd = (movie: Movie) => {
     dispatch(addMovie(movie));
   };
-  const handleMovieRemove = (movie: string) => {
+  const handleMovieRemove = (movie: Movie) => {
     dispatch(removeMovie(movie));
   };
 

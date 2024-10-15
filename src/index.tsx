@@ -1,11 +1,11 @@
 import "bulma/css/bulma.css";
-import { createRoot } from "react-dom/client";
+import { createRoot, Root } from "react-dom/client";
 import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement!);
+const rootElement: HTMLElement = document.getElementById("root")!;
+const root: Root = createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
