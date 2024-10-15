@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
-import { addSong, AppDispatch, Movie, removeSong, Song } from "../store";
+import { addSong, removeSong } from "../store";
 import { Dispatch } from "react";
 
 type SongState = {
