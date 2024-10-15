@@ -10,10 +10,9 @@ const moviesSlice = createSlice({
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
-    // resetMovies(state, action) {
-    //   console.log(state, action);
-    //   return [];
-    // },
+    resetMovies(state, action) {
+      return [];
+    },
   },
 });
 
@@ -28,10 +27,9 @@ const songsSlice = createSlice({
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
-    // resetAll(state, action) {
-    //   action.payload();
-    //   return [];
-    // },
+    resetSongs(state, action) {
+      return [];
+    },
   },
 });
 
@@ -43,5 +41,5 @@ const store = configureStore({
 });
 
 export { store };
-export const { addSong, removeSong /* resetAll */ } = songsSlice.actions;
-export const { addMovie, removeMovie /* resetMovie */ } = moviesSlice.actions;
+export const { addSong, removeSong, resetSongs } = songsSlice.actions;
+export const { addMovie, removeMovie, resetMovies } = moviesSlice.actions;
